@@ -1,26 +1,36 @@
 import React from "react";
 import CaravanType from "./components/CaravanType";
-import style from "./CaravanCard.module.css"
+import style from "./CaravanCard.module.css";
 import Image from "next/image";
 
 const CaravanCard = (oneCaravan) => {
-const { vehicleType, name, pictures } = oneCaravan.data;
-console.log(pictures)
-return (
+  const { vehicleType, name, pictures, location } = oneCaravan.data;
+
+  return (
     <div className={style.container}>
-      <Image 
-        src={pictures[0]}
-        width={50}
-        height={50}
-        loading="lazy"
-        alt="img"
-        />
-      <div>
-        <p>{vehicleType}</p>
-        <p>{name}</p>
+      <div className={style.wrapper}>
+        <div className={style.imageWrapper}>
+          <Image
+            src={pictures[0]}
+            quality={2}
+            width={410}
+            height={200}
+            loading="lazy"
+            alt="img"
+          />
+        </div>
+        <div>
+          <p>{vehicleType}</p>
+          <p>{name}</p>
+        </div>
+        
+        <div>
+          <p>{location}</p>
+          
+        </div>
+        {/* location and equip */}
+        {/* price */}
       </div>
-      {/* location and equip */}
-      {/* price */}
     </div>
   );
 };

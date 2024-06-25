@@ -1,21 +1,31 @@
 import CaravanCard from "./components/caravan/CaravanCard";
-import styles from "./page.module.css";
+import style from "./page.module.css";
 import data from "./data.json"
+import { Filters } from "./components/Filters/Filters";
 
 const Home = () => {
   const caravans = data.items;
 
-  return (
-    <main className={styles.container}>
-      {/* Filters */}
+  if (!caravans) {
+    return <div>Žádné karavany</div>
+  }
 
-      {/* Caravans */}
-      {caravans.map((oneCaravan) => {
-        return (
-          <CaravanCard key={oneCaravan.index} data={oneCaravan} />
-        )
-      })}
-      {/* Button */}
+  return (
+    <main className={style.container}>
+      <Filters />
+
+      <div className={style.wrapper}>
+        {caravans.map((oneCaravan) => {
+          return (
+            <CaravanCard 
+              key={oneCaravan.index} data={oneCaravan}
+            />
+          )
+        })}
+      </div>
+
+
+      <button>Načíst další</button>
     </main>
   );
 }

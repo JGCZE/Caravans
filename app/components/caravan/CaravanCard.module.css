@@ -1,5 +1,13 @@
 .container {
-  width: 30%;
+  width: 100%;
+}
+
+.wrapper {
+  border: 1px solid gray;
   height: 300px;
-  border: 1px solid red;
+  border-radius: 6px;
+}
+
+.imageWrapper {
+  width: 100%;
 }
