@@ -6,6 +6,7 @@
 
 .wrapper {
   display: grid;
+  justify-content: space-between;
+  gap: 36px;
   grid-template-columns: auto auto auto;
-  gap: 20px;
 }

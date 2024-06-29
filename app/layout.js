@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CaravanProvider from "./globalContext/globalContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <CaravanProvider>
       <body className={inter.className}>{children}</body>
+    </CaravanProvider>
     </html>
   );
 }

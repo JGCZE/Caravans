@@ -1,13 +1,16 @@
 .container {
-  width: 100%;
+  margin-top: 36px;
 }
 
 .wrapper {
   border: 1px solid gray;
-  height: 300px;
+  height: 360px;
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.imageWrapper {
-  width: 100%;
+.vehicleType {
+  font-size: 26px;
 }

@@ -4,7 +4,7 @@ import style from "./CaravanCard.module.css";
 import Image from "next/image";
 
 const CaravanCard = (oneCaravan) => {
-  const { vehicleType, name, pictures, location } = oneCaravan.data;
+  const { vehicleType, name, pictures, location, price } = oneCaravan.data;
 
   return (
     <div className={style.container}>
@@ -12,24 +12,27 @@ const CaravanCard = (oneCaravan) => {
         <div className={style.imageWrapper}>
           <Image
             src={pictures[0]}
-            quality={2}
-            width={410}
+            quality={1}
+            width={400}
             height={200}
             loading="lazy"
             alt="img"
           />
         </div>
+
         <div>
-          <p>{vehicleType}</p>
+          <p className={style.vehicleType}>{vehicleType}</p>
           <p>{name}</p>
         </div>
         
         <div>
           <p>{location}</p>
-          
+          <p>icons</p>
         </div>
-        {/* location and equip */}
-        {/* price */}
+        
+        <div>
+          <p>Cena od: <span>{price}</span></p>
+        </div>
       </div>
     </div>
   );

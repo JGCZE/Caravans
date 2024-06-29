@@ -1,10 +1,13 @@
+"use client"
 import CaravanCard from "./components/caravan/CaravanCard";
 import style from "./page.module.css";
-import data from "./data.json"
 import { Filters } from "./components/Filters/Filters";
+import { useFilter } from "./globalContext/globalContext";
 
 const Home = () => {
-  const caravans = data.items;
+
+  const allCaravans = useFilter()
+  const caravans = allCaravans
 
   if (!caravans) {
     return <div>Žádné karavany</div>
@@ -15,10 +18,10 @@ const Home = () => {
       <Filters />
 
       <div className={style.wrapper}>
-        {caravans.map((oneCaravan) => {
+        {caravans.map((oneCaravan, index) => {
           return (
             <CaravanCard 
-              key={oneCaravan.index} data={oneCaravan}
+              key={index} data={oneCaravan}
             />
           )
         })}
