@@ -7,7 +7,9 @@ import { useFilter } from "./globalContext/globalContext";
 const Home = () => {
 
   const allCaravans = useFilter()
-  const caravans = allCaravans
+  const caravans = allCaravans.allCaravans
+  console.log(caravans)
+
 
   if (!caravans) {
     return <div>Žádné karavany</div>
@@ -26,7 +28,6 @@ const Home = () => {
           )
         })}
       </div>
-
 
       <button>Načíst další</button>
     </main>
